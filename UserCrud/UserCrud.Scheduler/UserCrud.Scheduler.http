@@ -1,0 +1,6 @@
+@UserCrud.Scheduler_HostAddress = http://localhost:5048
+
+GET {{UserCrud.Scheduler_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
