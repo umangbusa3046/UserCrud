@@ -1,1 +1,7 @@
-<Solution />
+<Solution>
+  <Project Path="UserCrud.API/UserCrud.API.csproj" />
+  <Project Path="UserCrud.Application/UserCrud.Application.csproj" />
+  <Project Path="UserCrud.Domain/UserCrud.Domain.csproj" />
+  <Project Path="UserCrud.Infrastructure/UserCrud.Infrastructure.csproj" />
+  <Project Path="UserCrud.Scheduler/UserCrud.Scheduler.csproj" />
+</Solution>
