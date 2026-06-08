@@ -1,10 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Microsoft.EntityFrameworkCore;
+using UserCrud.Domain.Entities;
 
-namespace UserCrud.Infrastructure.Persistence
+namespace UserCrud.Infrastructure.Persistence;
+
+public sealed class AppDbContext : DbContext
 {
-    internal class AppDbContext
+    public AppDbContext(DbContextOptions<AppDbContext> options)
+        : base(options)
     {
+    }
+
+    public DbSet<User> Users => Set<User>();
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(
+            typeof(AppDbContext).Assembly);
+
+        base.OnModelCreating(modelBuilder);
     }
 }

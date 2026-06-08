@@ -4,7 +4,12 @@ using System.Text;
 
 namespace UserCrud.Application.Exceptions
 {
-    internal class NotFoundException
+    public sealed class NotFoundException
+     : Exception
     {
+        public NotFoundException(string message)
+            : base(message)
+        {
+        }
     }
 }

@@ -1,10 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using UserCrud.Application.Common;
+using UserCrud.Application.DTOs.User;
 
-namespace UserCrud.Application.Interfaces
+namespace UserCrud.Application.Interfaces;
+
+public interface IUserService
 {
-    internal class IUserService
-    {
-    }
+    Task<Result<Guid>> CreateAsync(
+        CreateUserRequest request);
+
+    Task<Result<UserResponse>> GetByIdAsync(
+        Guid id);
+
+    Task<Result<List<UserResponse>>> GetAllAsync();
+
+    Task<Result<bool>> UpdateAsync(
+        Guid id,
+        UpdateUserRequest request);
+
+    Task<Result<bool>> DeleteAsync(
+        Guid id);
 }
