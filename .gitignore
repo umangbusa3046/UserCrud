@@ -12,6 +12,7 @@ obj/
 # Logs
 Logs/
 
+appsettings*.json
 
 # Rider
 .idea/
