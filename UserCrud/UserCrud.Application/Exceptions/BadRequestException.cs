@@ -4,7 +4,12 @@ using System.Text;
 
 namespace UserCrud.Application.Exceptions
 {
-    internal class BadRequestException
+    public sealed class BadRequestException
+    : Exception
     {
+        public BadRequestException(string message)
+            : base(message)
+        {
+        }
     }
 }

@@ -3,6 +3,7 @@ using UserCrud.Application.Common;
 using UserCrud.Application.DTOs.User;
 using UserCrud.Application.Interfaces;
 using UserCrud.Domain.Entities;
+using UserCrud.Domain.Interfaces;
 
 namespace UserCrud.Application.Services;
 

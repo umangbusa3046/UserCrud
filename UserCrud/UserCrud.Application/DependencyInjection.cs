@@ -1,10 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
+using UserCrud.Application.Interfaces;
+using UserCrud.Application.Services;
+using UserCrud.Domain.Interfaces;
 
-namespace UserCrud.Application
+namespace UserCrud.Application;
+
+public static class DependencyInjection
 {
-    internal class DependencyInjection
+    public static IServiceCollection AddApplicationDI(
+        this IServiceCollection services)
     {
+        services.AddScoped<IUserService, UserService>();
+
+        services.AddValidatorsFromAssembly(
+            typeof(DependencyInjection).Assembly);
+
+        return services;
     }
 }
