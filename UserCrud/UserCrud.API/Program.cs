@@ -3,27 +3,21 @@ using UserCrud.API;
 using Serilog;
 using UserCrud.API.Middleware;
 
-Log.Logger =
-    new LoggerConfiguration()
-        .WriteTo.Console()
-        .WriteTo.File(
-            "Logs/log-.txt",
-            rollingInterval:
-                RollingInterval.Day)
-        .CreateLogger();
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-Log.Logger =
-    new LoggerConfiguration()
+builder.Host.UseSerilog((context, loggerConfiguration) =>
+{
+    loggerConfiguration
+        .ReadFrom.Configuration(context.Configuration)
         .WriteTo.Console()
         .WriteTo.File(
-            "Logs/log-.txt",
-            rollingInterval:
-                RollingInterval.Day)
-        .CreateLogger();
+            "Logs/ApplicationLogs.txt",
+            shared: true);
+});
 
 
 builder.Services.AddControllers();

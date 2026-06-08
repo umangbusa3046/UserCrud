@@ -9,6 +9,10 @@ obj/
 *.user
 *.suo
 
+# Logs
+Logs/
+
+
 # Rider
 .idea/
 
