@@ -2,7 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using UserCrud.Application.Interfaces;
 using UserCrud.Application.Services;
-using UserCrud.Domain.Interfaces;
 
 namespace UserCrud.Application;
 

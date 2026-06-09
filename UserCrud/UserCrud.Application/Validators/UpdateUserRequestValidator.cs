@@ -3,10 +3,10 @@ using UserCrud.Application.DTOs.User;
 
 namespace UserCrud.Application.Validators;
 
-public sealed class CreateUserRequestValidator
-    : AbstractValidator<CreateUserRequest>
+public sealed class UpdateUserRequestValidator
+    : AbstractValidator<UpdateUserRequest>
 {
-    public CreateUserRequestValidator()
+    public UpdateUserRequestValidator()
     {
         RuleFor(x => x.FirstName)
             .NotEmpty()

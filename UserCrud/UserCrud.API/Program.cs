@@ -1,4 +1,5 @@
 using FluentValidation.AspNetCore;
+
 using UserCrud.API;
 using Serilog;
 using UserCrud.API.Middleware;
@@ -28,8 +29,8 @@ builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddOpenApi();
-builder.Services.AddAppDI(builder.Configuration);
+
+builder.Services.AddApiDI(builder.Configuration);
 
 var app = builder.Build();
 

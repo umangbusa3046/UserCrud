@@ -5,7 +5,7 @@ namespace UserCrud.API;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddAppDI(
+    public static IServiceCollection AddApiDI(
         this IServiceCollection services,
         IConfiguration configuration)
     {
